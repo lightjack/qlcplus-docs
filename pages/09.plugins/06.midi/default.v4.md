@@ -62,6 +62,31 @@ Since the MIDI protocol works in a range of 0-127 values, and QLC+ works in the 
 
 It's interesting to notice that you don't necessarily need to keep 0 as lower value. For example with lower = 6 and upper = 2 the result will be: Function Off -> red LED, Function On -> green LED.
 
+Novation Launchpad MK2 LED Feedbacks
+------------------------------------
+
+The Launchpad also features LED color feedback. It basically works like the AKAI APC LED feedback, but there are differences in the color codes and how to make the active LED blink.
+There are 128 colors to choose from, all of them are listed in the [MK2 Programmer's Reference Manual](https://fael-downloads-prod.focusrite.com/customer/prod/s3fs-public/downloads/Launchpad%20MK2%20Programmers%20Reference%20Manual%20v1.03.pdf).
+
+If you want to use the values out of the manual, you will have to double them for QLC+.
+Here you can find some basic colors with the correct value for QLC+:
+
+| Value | LED color |
+| --- | --- |
+| 0   | Off |
+| 5   | White |
+| 10  | Red |
+| 18  | Orange |
+| 26  | Yellow |
+| 46  | Green |
+| 66  | Turquois |
+| 90  | Blue |
+| 110 | Purple |
+| 116 | Pink |
+
+It you want to make the LED of active functions blink, please set the MIDI output channel to 2 in the MIDI plugin configuration of the Launchpad in the Inputs/Outputs page.
+Be aware, that it is only possible to switch the static/blinking behaviour for all active functions. If you want them to be static again, just switch back to MIDI channel 1.
+
 MIDI beat clock
 ---------------
 
